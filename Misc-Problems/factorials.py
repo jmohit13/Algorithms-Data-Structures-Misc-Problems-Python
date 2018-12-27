@@ -35,7 +35,7 @@ def showMeTheFactorial(x):
                 tempList.append(i)
         return tempList
 
-    if x > 0: 
+    if x > 0:
         numList = [i for i in range(1,x+1)]
             
         while len(numList) > 1:
