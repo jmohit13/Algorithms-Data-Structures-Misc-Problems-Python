@@ -1,11 +1,17 @@
 # Algorithms
 - Binary Search
-- Selection Sort
+- Sorting
+	- Bubble Sort
+	- Selection Sort
+	- Insertion Sort
 # Data Structures
-- Trees
-    - BinaryTree
-- Queue
 - Stack
+- Queue
+- Trees
+	- Tree (Lists)
+    - BinaryTree (OOPs)
 # Miscellaneous problems solved in python
 - Factorial
 - Prime Number
+- Parentheses Checker
+- Reverse String (Stack)
