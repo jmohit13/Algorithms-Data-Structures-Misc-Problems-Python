@@ -5,13 +5,18 @@
 	- Selection Sort
 	- Insertion Sort
 # Data Structures
-- Stack
+- Deque
+- LinkedList (Unordered)
 - Queue
+- Stack
 - Trees
 	- Tree (Lists)
     - BinaryTree (OOPs)
 # Miscellaneous problems solved in python
 - Factorial
-- Prime Number
+- Factorial Recursion
+- Hot Potato
 - Parentheses Checker
+- Prime Number
 - Reverse String (Stack)
+- Stack Frames Recursion	
