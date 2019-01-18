@@ -5,7 +5,9 @@
 	- Selection Sort
 	- Insertion Sort
 # Data Structures
+- Binary Heap (Priority Queue)
 - Deque
+- Graphs
 - LinkedList (Unordered)
 - Queue
 - Stack
