@@ -1,11 +1,12 @@
 # Insertion Sort
+import unittest
 
 def insertionSort(theList):
     """
         Complexity : O(n^2)
         
         It always maintains a sorted sublist in the lower positions of the list. 
-        Each new item is then “inserted” back into the previous sublist such that 
+        Each new item is then inserted back into the previous sublist such that 
         the sorted sublist is one item larger.
         
         Step 1 : Select the first unsorted element
@@ -33,11 +34,13 @@ def insertionSort(theList):
             break
     return theList
     
+class InsertionSortTest(unittest.TestCase):
+    def test(self):
+        self.l1 = [54,26,93,17,77,31,44,55,20]
+        self.l2 = [15, 5, 4, 18, 12, 19, 14, 10, 8, 20]
+        self.assertListEqual(insertionSort(self.l1),[17, 20, 26, 31, 44, 54, 55, 77, 93])
+        self.assertListEqual(insertionSort(self.l2),[4, 5, 8, 10, 12, 14, 15, 18, 19, 20])
 
 if __name__ == "__main__":
-    alist = [54,26,93,17,77,31,44,55,20]
-    # alist = [15, 5, 4, 18, 12, 19, 14, 10, 8, 20]
-    print(alist)
-    print(insertionSort(alist))
-
-
+    unittest.main()
+    
