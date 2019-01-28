@@ -1,4 +1,5 @@
 # Bubble Sort
+import unittest
 
 def bubbleSort(theList):
     """
@@ -32,8 +33,12 @@ def bubbleSort(theList):
                 
     return theList
 
+class BubbleSortTest(unittest.TestCase):
+    def testBubbleSort(self):   
+        self.l1 = [5,1,4,2,8,9]
+        self.l = [54,26,93,17,77,31,44,55,20]
+        self.assertListEqual(bubbleSort(self.l),[17, 20, 26, 31, 44, 54, 55, 77, 93])
+        self.assertListEqual(bubbleSort(self.l1),[1,2,4,5,8,9])
+
 if __name__ == "__main__":
-    # alist = [54,26,93,17,77,31,44,55,20]
-    alist = [5,1,4,2,8,9]
-    print(alist)
-    print(bubbleSort(alist))
+    unittest.main()
