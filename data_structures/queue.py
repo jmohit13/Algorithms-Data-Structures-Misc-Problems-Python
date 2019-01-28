@@ -1,4 +1,5 @@
 # Queue Implementation
+import unittest
 
 class Queue:
     """
@@ -39,3 +40,28 @@ class Queue:
         """
         return len(self.items)
     
+
+class QueueTest(unittest.TestCase):
+    def setUp(self):
+        self.q = Queue()
+
+    def testEnqueue(self):
+        self.q.enqueue('ball')
+        self.assertEqual(self.q.items[0],'ball')
+
+    def testDequeue(self):
+        self.q.enqueue('baseball')
+        removedItem = self.q.dequeue()
+        self.assertEqual(removedItem,'baseball')
+
+    def testIsEmpty(self):
+        self.assertTrue(self.q.isEmpty())
+
+    def testSize(self):
+        self.q.enqueue('ball')
+        self.q.enqueue('football')
+        self.assertEqual(self.q.size(),2)
+
+if __name__ == "__main__":
+    unittest.main()
+
