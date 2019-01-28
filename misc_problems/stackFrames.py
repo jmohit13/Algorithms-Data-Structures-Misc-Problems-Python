@@ -1,7 +1,9 @@
 # Stack Frames Recursion
 import sys
+import unittest
 sys.path.append('..')
 from data_structures.stack import Stack
+
 
 def toStr(n,base):
     """
@@ -38,6 +40,15 @@ def toStr(n,base):
     return newStr
     
 
+class StackFramesTest(unittest.TestCase):
+    def testStackFrames(self):
+        self.assertEqual(toStr(61453,16),'F00D')
+        self.assertEqual(toStr(1453,16),'5AD')
+
 if __name__ == "__main__":
+    unittest.main()
+
     # print(toStr(1453,16)) # 5AD
-    print(toStr(61453,16)) # 0xF00D
+    # print(toStr(61453,16)) # 0xF00D
+
+
