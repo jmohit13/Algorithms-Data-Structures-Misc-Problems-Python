@@ -1,4 +1,5 @@
 # Deque
+import unittest
 
 class Deque:
     """
@@ -13,7 +14,7 @@ class Deque:
         self.items = []
         
     def addFront(self,item):
-        self.items.insert(len(items),item)
+        self.items.insert(len(self.items),item)
         
     def addRear(self,item):
         self.items.insert(0,item)
@@ -30,17 +31,37 @@ class Deque:
     def size(self):
         return len(self.items)
         
+
+class DequeTest(unittest.TestCase):
+    def setUp(self):
+        self.dq = Deque()
+ 
+    def testAddFront(self):
+        self.dq.addFront(4)
+        self.assertEqual(self.dq.items[len(self.dq.items)-1],4)
+
+    def testAddRear(self):
+        self.dq.addRear('shell')
+        self.assertEqual(self.dq.items[0],'shell')
+
+    def testRemoveFront(self):
+        self.dq.addRear('dog')
+        self.dq.addFront('cat')
+        itemRemoved = self.dq.removeFront()
+        self.assertEqual(itemRemoved,'cat')
+
+    def testRemoveRear(self):
+        self.dq.addRear('dog')
+        self.dq.addFront('cat')
+        itemRemoved = self.dq.removeRear()
+        self.assertEqual(itemRemoved,'dog')
+
+    def testIsEmpty(self):
+        self.assertTrue(self.dq.isEmpty())
+
+    def testSize(self):
+        self.assertEqual(self.dq.size(),0)
+
+
 if __name__ == "__main__":
-    de = Deque()
-    print(de)
-    de.addRear(4)
-    de.addRear('dog')
-    print(de.items)
-    print(de.size())
-    print(de.isEmpty())
-    print(de.addRear(8.4))
-    print(de.items)
-    print(de.removeRear())
-    print(de.items)
-    print(de.removeFront())
-    print(de.items)
+    unittest.main()
