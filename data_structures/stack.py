@@ -1,4 +1,5 @@
 # Stack Implementation
+import unittest
 
 class Stack:
     """
@@ -45,3 +46,35 @@ class Stack:
             It needs no parameters and returns an integer.            
         """
         return len(self.items)
+
+
+class StackTest(unittest.TestCase):
+    def setUp(self):
+        self.s = Stack()
+
+    def testPush(self):
+        self.s.push(3)
+        self.assertEqual(self.s.items[len(self.s.items)-1],3)
+
+    def testPop(self):
+        self.s.push(1)
+        self.s.push(4)
+        removedItem = self.s.pop()
+        self.assertEqual(removedItem,4)
+
+    def testPeek(self):
+        self.s.push(1)
+        self.s.push(5)
+        self.assertEqual(self.s.peek(),5)
+
+    def testSize(self):
+        self.s.push(9)
+        self.s.push(2)
+        self.s.push(6)
+        self.assertEqual(self.s.size(),3)
+
+    def testIsEmpty(self):
+        self.assertTrue(self.s.isEmpty())
+
+if __name__ == "__main__":
+    unittest.main()
