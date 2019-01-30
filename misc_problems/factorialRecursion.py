@@ -8,6 +8,8 @@
     A recursive algorithm must call itself, recursively
 """     
 
+import unittest
+
 def factorial(n):
 	"""
         Calculate factorial of number. 
@@ -37,7 +39,11 @@ def factorial(n):
 	else:
 		return n * factorial(n-1)
 
+class FactorialTest(unittest.TestCase):
+    def testFactorial(self):
+        self.assertEqual(factorial(4),24)
+        self.assertEqual(factorial(0),1)
+        self.assertEqual(factorial(1),1)
+
 if __name__ == "__main__":
-	print(factorial(5))
-	print(factorial(0))
-	print(factorial(1))
+    unittest.main()
