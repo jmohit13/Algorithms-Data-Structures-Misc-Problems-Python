@@ -5,6 +5,7 @@
 # Worst-case space complexity O(1)
 
 import math
+import unittest
 
 def binarySearch(l,item):
     """
@@ -23,8 +24,8 @@ def binarySearch(l,item):
     itemFound = False
     
     while(first <= last and itemFound is False):
-        midpoint = math.floor((first + last)/2)
-        if item == l[midpoint]:
+        midpoint = int(math.floor((first + last)/2))
+        if item == int(l[midpoint]):
             itemFound = True
         else:
             if item < l[midpoint]:
@@ -33,3 +34,12 @@ def binarySearch(l,item):
                 first = midpoint + 1 # Update the first pointer
                 
     return itemFound
+
+
+class BinarySearchTest(unittest.TestCase):
+    def testBinarySearch(self):
+        self.l = [0, 1, 2, 8, 13, 17, 19, 32, 42]
+        self.assertEqual(binarySearch(self.l, 2),True)
+
+if __name__ == "__main__":
+    unittest.main()
